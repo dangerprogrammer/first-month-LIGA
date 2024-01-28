@@ -1,34 +1,56 @@
 .main-container {
     position: relative;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     background: #f1f1f1;
     color: #111;
+    overflow: hidden;
 
     .image-container {
-        flex-shrink: 0;
-        padding: 2rem;
-
         svg {
             position: relative;
             height: 100%;
-            width: 800px;
-            font-size: .1em;
-            // display: flex;
-            // align-items: center;
-            // justify-content: center;
-            background: red;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
     }
 
     .inputs-container {
-        flex-grow: 1;
         display: flex;
         flex-direction: column;
+        gap: .6em;
         align-items: center;
         justify-content: center;
         background: white;
+        padding: 2em clamp(2em, 2vw, 4em);
+        flex-grow: 1;
+        font-size: 1.1em;
+
+        .title-login {
+            font-weight: 500;
+            color: #444;
+        }
+
+        .secondary-text {
+            font-size: .75em;
+            opacity: .5;
+        }
+
+        .input-text {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            height: 2em;
+            background: #f1f1f1;
+            border-radius: 2em;
+            padding: 0 1em;
+            padding-left: 2em;
+
+            input {}
+        }
     }
 }
 
@@ -41,6 +63,10 @@
         border-radius: 2rem;
         width: 95vw;
         box-shadow: 0 .5rem 1rem #00000008;
+
+        .image-container {
+            max-width: 45rem;
+        }
     }
 }
 
@@ -48,5 +74,40 @@
     .main-container {
         height: 100vh;
         width: 100vw;
+
+        .image-container {
+            max-width: 35rem;
+        }
+    }
+}
+
+@media screen and (min-width: 48rem) {
+    .main-container {
+        flex-direction: row;
+
+        .image-container {
+            padding: 4rem;
+            flex-grow: 2;
+        }
+
+        .inputs-container {
+            height: 100%;
+            flex-shrink: 0;
+        }
+    }
+}
+
+@media screen and (max-width: calc(48rem - 1px)) {
+    .main-container {
+        flex-direction: column;
+
+        .image-container {
+            padding: 2rem;
+            width: 100%;
+        }
+
+        .inputs-container {
+            width: 100%;
+        }
     }
 }
