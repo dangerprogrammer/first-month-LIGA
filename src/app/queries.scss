@@ -14,7 +14,6 @@
         }
     }
 }
-
 @media screen and (max-width: calc(64rem - 1px)) {
     .main-container {
         height: 100vh;
@@ -25,13 +24,11 @@
         }
     }
 }
-
 @media screen and (min-width: 40rem) and (max-width: calc(64rem - 1px)) {
     .image-container {
         max-width: 35rem;
     }
 }
-
 @media screen and (min-width: 40rem) {
     .main-container {
         flex-direction: row;
@@ -46,7 +43,6 @@
         }
     }
 }
-
 @media screen and (max-width: calc(40rem - 1px)) {
     .main-container {
         flex-direction: column;
