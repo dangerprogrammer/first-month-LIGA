@@ -218,10 +218,6 @@ a {
     margin-bottom: 1em;
     transition: color .3s ease-in-out, opacity .3s ease-in-out;
 
-    &:not(a:hover, .black) {
-        opacity: .5;
-    }
-
     &.black {
         font-weight: 600;
         color: #333;
