@@ -88,11 +88,11 @@
         }
 
         &:has(.left) input {
-            padding-left: 2em;
+            padding-left: 2.75em;
         }
 
         &:has(.right) input {
-            padding-right: 2em;
+            padding-right: 2.75em;
         }
 
         .icon {
@@ -120,11 +120,11 @@
             }
 
             &.left {
-                left: .8em;
+                left: 1em;
             }
 
             &.right {
-                right: .8em;
+                right: 1em;
             }
 
             > * {
@@ -146,7 +146,7 @@
             color: #333;
             font-family: Poppins;
             font-size: 1em;
-            padding-block: .4em;
+            padding-block: .8em;
             background: transparent;
             width: 100%;
         }
