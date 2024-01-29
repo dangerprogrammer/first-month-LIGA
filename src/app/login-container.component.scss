@@ -1,3 +1,5 @@
+@import url("./queries.scss");
+
 .main-container {
     $bg-color: #f1f1f1;
     $red-color: #e00;
@@ -261,72 +263,6 @@
                     opacity: .75;
                 }
             }
-        }
-    }
-}
-
-@media screen and (min-width: 64rem) {
-    .main-container {
-        margin: 1rem;
-        max-width: 80rem;
-        max-height: 80vh;
-        aspect-ratio: 14 / 9;
-        border-radius: 2rem;
-        width: 95vw;
-        box-shadow: 0 .5rem 1rem #00000008;
-
-        .image-container {
-            max-width: 45rem;
-            padding: 4rem;
-        }
-    }
-}
-
-@media screen and (max-width: calc(64rem - 1px)) {
-    .main-container {
-        height: 100vh;
-        width: 100vw;
-
-        .image-container {
-            padding: 2rem;
-        }
-    }
-}
-
-@media screen and (min-width: 40rem) and (max-width: calc(64rem - 1px)) {
-    .image-container {
-        max-width: 35rem;
-    }
-}
-
-@media screen and (min-width: 40rem) {
-    .main-container {
-        flex-direction: row;
-
-        .image-container {
-            flex-grow: 2;
-        }
-
-        .inputs-container {
-            height: 100%;
-            flex-shrink: 0;
-        }
-    }
-}
-
-@media screen and (max-width: calc(40rem - 1px)) {
-    .main-container {
-        flex-direction: column;
-        overflow-y: auto;
-
-        .image-container {
-            width: 100%;
-        }
-
-        .inputs-container {
-            position: sticky;
-            width: 100%;
-            bottom: 0;
         }
     }
 }
