@@ -34,12 +34,7 @@
             font-weight: 500;
             color: #444;
             width: 100%;
-        }
-
-        > .right {
-            display: flex;
-            width: 100%;
-            justify-content: flex-end;
+            text-align: center;
         }
 
         a {
@@ -68,22 +63,27 @@
         }
 
         .input-text {
-            position: relative;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: flex-end;
             font-size: .8em;
             width: 100%;
-            background: #f1f1f1;
-            border-radius: 2em;
-            overflow: hidden;
             max-width: 25em;
-            outline: 2px solid transparent;
-            border: 2px solid transparent;
-            transition: outline .2s .1s ease-in-out, background .2s ease-in-out, border .2s ease-in-out;
 
-            &:has(input:focus) {
+            .input-content {
+                position: relative;
+                display: flex;
+                align-items: center;
+                background: #f1f1f1;
+                width: 100%;
+                border-radius: 2em;
+                outline: 2px solid transparent;
+                border: 2px solid transparent;
+                transition: outline .2s .1s ease-in-out, background .2s ease-in-out, border .2s ease-in-out;
+            }
+
+            &:has(input:focus) .input-content {
                 background: transparent;
                 outline-color: #f005;
                 border-color: red;
@@ -151,6 +151,15 @@
                 background: transparent;
                 width: 100%;
             }
+
+            > .right-password {
+                display: flex;
+                width: 100%;
+                font-size: 1.2em;
+                padding-top: .75em;
+                align-items: center;
+                justify-content: flex-end;
+            }
         }
 
         .input-text + .input-text {
@@ -167,7 +176,7 @@
             border-radius: 3em;
             font-family: inherit;
             cursor: pointer;
-            transition: .2s;
+            transition: .3s;
 
             &:hover {
                 box-shadow: 0 .5em 1em #f004;
