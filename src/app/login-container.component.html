@@ -2,42 +2,5 @@
     <section [className]="'image-container'">
         <img src="../assets/svg/brand.svg" alt="Brand SVG">
     </section>
-    <section [className]="'inputs-container'">
-        <div [className]="'input-container'">
-            <h1 [className]="'title-login'">Plataforma <span [className]="'red'">edebê</span> Brasil</h1>
-            <p [className]="'secondary-text'">digite seus dados para acessar nossa plataforma</p>
-            <div [className]="'input-text'">
-                <div [className]="'input-content'">
-                    <span [classList]="'left icon'">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><path d="M332.64 64.58C313.18 43.57 286 32 256 32c-30.16 0-57.43 11.5-76.8 32.38-19.58 21.11-29.12 49.8-26.88 80.78C156.76 206.28 203.27 256 256 256s99.16-49.71 103.67-110.82c2.27-30.7-7.33-59.33-27.03-80.6zM432 480H80a31 31 0 01-24.2-11.13c-6.5-7.77-9.12-18.38-7.18-29.11C57.06 392.94 83.4 353.61 124.8 326c36.78-24.51 83.37-38 131.2-38s94.42 13.5 131.2 38c41.4 27.6 67.74 66.93 76.18 113.75 1.94 10.73-.68 21.34-7.18 29.11A31 31 0 01432 480z"/></svg>
-                    </span>
-                    <input type="email" placeholder="Digite aqui seu e-mail" value="professor.historia@salesiano.com" id="email"/>
-                </div>
-            </div>
-            <div [className]="'input-text'">
-                <div [className]="'input-content'">
-                    <span [classList]="'left icon'">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M368 192h-16v-80a96 96 0 10-192 0v80h-16a64.07 64.07 0 00-64 64v176a64.07 64.07 0 0064 64h224a64.07 64.07 0 0064-64V256a64.07 64.07 0 00-64-64zm-48 0H192v-80a64 64 0 11128 0z"/></svg>
-                    </span>
-                    <input [type]="showPassword ? 'text' : 'password'" placeholder="Digite aqui sua senha" value="example123456" id="password"/>
-                    <span [classList]="'right icon click'" (click)="togglePassword()">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" [style]="{display: showPassword ? 'none' : 'block'}"><path d="M432 448a15.92 15.92 0 01-11.31-4.69l-352-352a16 16 0 0122.62-22.62l352 352A16 16 0 01432 448zM248 315.85l-51.79-51.79a2 2 0 00-3.39 1.69 64.11 64.11 0 0053.49 53.49 2 2 0 001.69-3.39zM264 196.15L315.87 248a2 2 0 003.4-1.69 64.13 64.13 0 00-53.55-53.55 2 2 0 00-1.72 3.39z"/><path d="M491 273.36a32.2 32.2 0 00-.1-34.76c-26.46-40.92-60.79-75.68-99.27-100.53C349 110.55 302 96 255.68 96a226.54 226.54 0 00-71.82 11.79 4 4 0 00-1.56 6.63l47.24 47.24a4 4 0 003.82 1.05 96 96 0 01116 116 4 4 0 001.05 3.81l67.95 68a4 4 0 005.4.24 343.81 343.81 0 0067.24-77.4zM256 352a96 96 0 01-93.3-118.63 4 4 0 00-1.05-3.81l-66.84-66.87a4 4 0 00-5.41-.23c-24.39 20.81-47 46.13-67.67 75.72a31.92 31.92 0 00-.64 35.54c26.41 41.33 60.39 76.14 98.28 100.65C162.06 402 207.92 416 255.68 416a238.22 238.22 0 0072.64-11.55 4 4 0 001.61-6.64l-47.47-47.46a4 4 0 00-3.81-1.05A96 96 0 01256 352z"/></svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" [style]="{display: !showPassword ? 'none' : 'block'}"><circle cx="256" cy="256" r="64"/><path d="M490.84 238.6c-26.46-40.92-60.79-75.68-99.27-100.53C349 110.55 302 96 255.66 96c-42.52 0-84.33 12.15-124.27 36.11-40.73 24.43-77.63 60.12-109.68 106.07a31.92 31.92 0 00-.64 35.54c26.41 41.33 60.4 76.14 98.28 100.65C162 402 207.9 416 255.66 416c46.71 0 93.81-14.43 136.2-41.72 38.46-24.77 72.72-59.66 99.08-100.92a32.2 32.2 0 00-.1-34.76zM256 352a96 96 0 1196-96 96.11 96.11 0 01-96 96z"/></svg>
-                    </span>
-                </div>
-                <span [className]="'right-password'">
-                    <a href="#" [className]="'secondary-text right black'">esqueceu a senha?</a>
-                </span>
-            </div>
-            <button [className]="'access-button'">Acessar plataforma</button>
-            <div [className]="'register'">
-                <p [className]="'secondary-text'">Não possui uma conta?</p>
-                <a [className]="'red click'">Cadastre-se</a>
-            </div>
-        </div>
-        <div [className]="'terms'">
-            <a href="#" [className]="'secondary-text'">termos de serviço</a>
-            <a href="#" [className]="'secondary-text'">política de privacidade</a>
-        </div>
-    </section>
+    <inputs-container/>
 </main>
