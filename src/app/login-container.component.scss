@@ -1,8 +1,10 @@
 .main-container {
+    $bg-color: #f1f1f1;
+    $red-color: #e00;
     position: relative;
     display: flex;
     justify-content: space-between;
-    background: #f1f1f1;
+    background: $bg-color;
     color: #111;
     overflow: hidden;
 
@@ -22,165 +24,242 @@
     .inputs-container {
         display: flex;
         flex-direction: column;
-        gap: .6em;
+        gap: 1em;
         align-items: center;
-        justify-content: center;
+        justify-content: space-between;
         background: white;
-        padding: 2em clamp(2em, 2vw, 4em);
+        padding: 2em clamp(1.5em, 4vw, 5em);
         flex-grow: 1;
         font-size: 1.1em;
+        
+        > * {
+            max-width: 20em;
+        }
 
-        .title-login {
-            font-weight: 500;
-            color: #444;
+        .input-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 1;
             width: 100%;
-            text-align: center;
+
+            .red {
+                color: $red-color;
+            }
+
+            .click {
+                cursor: pointer;
+            }
+
+            .title-login {
+                font-weight: 500;
+                color: #444;
+                width: 100%;
+                text-align: center;
+            }
+
+            .register {
+                display: flex;
+                font-size: .75em;
+                flex-direction: row;
+                gap: .5em;
+                align-items: center;
+                justify-content: center;
+
+                .secondary-text {
+                    font-size: 1em;
+                    margin-bottom: initial;
+                }
+
+                .red {
+                    font-weight: 700;
+                }
+            }
+
+            .input-text {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-end;
+                font-size: .8em;
+                width: 100%;
+
+                .input-content {
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    background: #f1f1f1;
+                    width: 100%;
+                    border-radius: 2em;
+                    outline: 2px solid transparent;
+                    border: 2px solid transparent;
+                    transition: outline .2s .05s ease-in-out, background .2s ease-in-out, border .2s ease-in-out;
+                }
+
+                &:has(input:focus) .input-content {
+                    background: transparent;
+                    outline-color: #e005;
+                    border-color: $red-color;
+
+                    .icon {
+                        fill: $red-color;
+                    }
+                }
+
+                &:has(.left) input {
+                    padding-left: 2em;
+                }
+
+                &:has(.right) input {
+                    padding-right: 2em;
+                }
+
+                .icon {
+                    position: absolute;
+                    font-size: 1em;
+                    height: 1em;
+                    width: 1em;
+                    top: 50%;
+                    translate: 0 -50%;
+                    scale: 1.2;
+                    fill: #888;
+                    transition: fill .2s ease-in-out;
+
+                    &:not(.click) {
+                        pointer-events: none;
+                    }
+
+                    &.click {
+                        cursor: pointer;
+                        z-index: 10;
+
+                        &:hover {
+                            fill: #555;
+                        }
+                    }
+
+                    &.left {
+                        left: .8em;
+                    }
+
+                    &.right {
+                        right: .8em;
+                    }
+
+                    > * {
+                        position: relative;
+                        height: 100%;
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                }
+
+                input {
+                    outline: none;
+                    border: none;
+                    height: 100%;
+                    margin: 0;
+                    font-weight: 500;
+                    color: #333;
+                    font-family: Poppins;
+                    font-size: 1em;
+                    padding-block: .4em;
+                    background: transparent;
+                    width: 100%;
+                }
+
+                > .right-password {
+                    display: flex;
+                    width: 100%;
+                    font-size: 1.2em;
+                    padding-top: .75em;
+                    align-items: center;
+                    justify-content: flex-end;
+                }
+            }
+
+            .input-text + .input-text {
+                margin-top: .75em;
+            }
+
+            .access-button {
+                background: $red-color;
+                border: none;
+                outline: none;
+                font-size: .7em;
+                color: white;
+                padding: 1.2em 5em;
+                border-radius: 3em;
+                font-family: inherit;
+                cursor: pointer;
+                opacity: .9;
+                transition: .3s;
+
+                &:hover {
+                    box-shadow: 0 .5em 1em #e004;
+                    scale: 1.05;
+                }
+            }
         }
 
         a {
+            position: relative;
             color: inherit;
             text-decoration: none;
+            overflow: hidden;
+
+            &::before {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 2px;
+                bottom: 0;
+                background: $red-color;
+                scale: 0 1;
+                transition: scale .3s ease-in-out;
+                transform-origin: bottom right;
+            }
+
+            &:hover::before {
+                scale: 1;
+                transform-origin: bottom left;
+            }
         }
 
         .secondary-text {
             font-size: .75em;
             margin-bottom: 1em;
+            transition: color .3s ease-in-out, opacity .3s ease-in-out;
 
-            &:not(.black) {
+            &:not(a:hover, .black) {
                 opacity: .5;
             }
 
             &.black {
                 font-weight: 600;
-                transition: color .3s ease-in-out;
                 color: #333;
                 cursor: pointer;
 
                 &:hover {
-                    color: red;
+                    color: $red-color;
                 }
             }
         }
 
-        .input-text {
+        .terms {
             display: flex;
-            flex-direction: column;
+            justify-content: space-between;
             align-items: center;
-            justify-content: flex-end;
-            font-size: .8em;
             width: 100%;
-            max-width: 25em;
 
-            .input-content {
-                position: relative;
-                display: flex;
-                align-items: center;
-                background: #f1f1f1;
-                width: 100%;
-                border-radius: 2em;
-                outline: 2px solid transparent;
-                border: 2px solid transparent;
-                transition: outline .2s .1s ease-in-out, background .2s ease-in-out, border .2s ease-in-out;
-            }
-
-            &:has(input:focus) .input-content {
-                background: transparent;
-                outline-color: #f005;
-                border-color: red;
-            }
-
-            &:has(.left) input {
-                padding-left: 2em;
-            }
-
-            &:has(.right) input {
-                padding-right: 2em;
-            }
-
-            .icon {
-                position: absolute;
-                font-size: 1em;
-                height: 1em;
-                width: 1em;
-                top: 50%;
-                translate: 0 -50%;
-                scale: 1.2;
-                fill: #888;
-
-                &:not(.click) {
-                    pointer-events: none;
+            a.secondary-text {
+                &:not(:hover) {
+                    opacity: .75;
                 }
-
-                &.click {
-                    cursor: pointer;
-                    z-index: 10;
-
-                    &:hover {
-                        fill: #555;
-                    }
-                }
-
-                &.left {
-                    left: .8em;
-                }
-
-                &.right {
-                    right: .8em;
-                }
-
-                > * {
-                    position: relative;
-                    height: 100%;
-                    width: 100%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                }
-            }
-
-            input {
-                outline: none;
-                border: none;
-                height: 100%;
-                margin: 0;
-                font-weight: 500;
-                color: #333;
-                font-family: Poppins;
-                font-size: 1em;
-                padding-block: .4em;
-                background: transparent;
-                width: 100%;
-            }
-
-            > .right-password {
-                display: flex;
-                width: 100%;
-                font-size: 1.2em;
-                padding-top: .75em;
-                align-items: center;
-                justify-content: flex-end;
-            }
-        }
-
-        .input-text + .input-text {
-            margin-top: .75em;
-        }
-
-        .access-button {
-            background: red;
-            border: none;
-            outline: none;
-            font-size: .7em;
-            color: white;
-            padding: 1.2em 5em;
-            border-radius: 3em;
-            font-family: inherit;
-            cursor: pointer;
-            transition: .3s;
-
-            &:hover {
-                box-shadow: 0 .5em 1em #f004;
-                scale: 1.05;
             }
         }
     }
@@ -238,13 +317,16 @@
 @media screen and (max-width: calc(40rem - 1px)) {
     .main-container {
         flex-direction: column;
+        overflow-y: auto;
 
         .image-container {
             width: 100%;
         }
 
         .inputs-container {
+            position: sticky;
             width: 100%;
+            bottom: 0;
         }
     }
 }
