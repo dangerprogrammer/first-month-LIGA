@@ -1,28 +1,13 @@
 @media screen and (min-width: 64rem) {
-    .main-container {
-        margin: 1rem;
-        max-width: 80rem;
-        max-height: 80vh;
-        aspect-ratio: 14 / 9;
-        border-radius: 2rem;
-        width: 95vw;
-        box-shadow: 0 .5rem 1rem #00000008;
-
-        .image-container {
-            max-width: 45rem;
-            padding: 4rem;
-        }
+    .main-container .image-container {
+        max-width: 45rem;
+        padding: 4rem;
     }
 }
 
 @media screen and (max-width: calc(64rem - 1px)) {
-    .main-container {
-        height: 100vh;
-        width: 100vw;
-
-        .image-container {
-            padding: 2rem;
-        }
+    .main-container .image-container {
+        padding: 2rem;
     }
 }
 
@@ -73,6 +58,8 @@
     background: $bg-color;
     color: #111;
     overflow: hidden;
+    height: 100vh;
+    width: 100vw;
 
     .image-container {
         pointer-events: none;
@@ -96,9 +83,5 @@
         background: white;
         padding: 2em clamp(1.5em, 4vw, 5em);
         flex-grow: 1;
-    
-        > * {
-            max-width: 20em;
-        }
     }
 }

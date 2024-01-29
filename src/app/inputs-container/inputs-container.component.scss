@@ -23,6 +23,7 @@
     justify-content: center;
     flex-grow: 1;
     width: 100%;
+    max-width: 30em;
 
     .red {
         color: $red-color;
@@ -234,6 +235,7 @@ a {
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    max-width: 30em;
 
     a.secondary-text {
         &:not(:hover) {
