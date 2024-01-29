@@ -14,13 +14,13 @@
     }
 }
 
-@media screen and (min-width: 40rem) and (max-width: calc(64rem - 1px)) {
+@media screen and (min-width: 48rem) and (max-width: calc(64rem - 1px)) {
     .image-container > * {
         max-width: 35rem;
     }
 }
 
-@media screen and (min-width: 40rem) {
+@media screen and (min-width: 48rem) {
     .main-container {
         flex-direction: row;
 
@@ -35,13 +35,17 @@
     }
 }
 
-@media screen and (max-width: calc(40rem - 1px)) {
+@media screen and (max-width: calc(48rem - 1px)) {
     .main-container {
         flex-direction: column;
         overflow-y: auto;
 
         .image-container {
             width: 100%;
+
+            > * {
+                max-width: 35rem;
+            }
         }
 
         inputs-container {
